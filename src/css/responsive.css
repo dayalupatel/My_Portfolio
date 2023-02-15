@@ -1,0 +1,121 @@
+.hamburger {
+    position: absolute;
+    top: -20px;
+    left: 20px;
+    display: none;
+    cursor: pointer;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: var(--skin-color);
+}
+.hamburger.active .aside{
+    left: 0;
+}
+.hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+@media (max-width:1199px) {
+    .hamburger {
+        display: block;
+    }
+    .aside {
+        left: -270px;
+    }
+    .aside.active {
+        left: 0;
+    }
+    .main-content {
+        padding-left: 0px;
+    }
+
+    .about .about-content .personal-info .info-item p span {
+        display: block;
+        margin-left: 0;
+    }
+}
+
+@media (max-width:991px) {
+    .home .home-info {
+        flex: 0 0 100%;
+        max-width: 100%;
+        margin-bottom: 60px;
+    }
+    .home .home-img  {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .home .home-img::before,
+    .home .home-img::after  {
+        content: none;
+    }
+
+    .contact .contact-info-item,
+    .portfolio .portfolio-item,
+    .service .service-item {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
+}
+@media (max-width:767px) {
+    .about .about-content .education,
+    .about .about-content .experience,
+    .about .about-content .skills,
+    .about .about-content .personal-info {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .section-title h2 {
+        font-size: 35px;
+        font-weight: 700;
+    }
+}
+@media (max-width:450px) {
+    .contact .contact-form .col-6,
+    .service .service-item,
+    .portfolio .portfolio-item {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
+@media (max-width:380px) {
+    .home .home-img {
+        display: none;
+    }
+}
+@media (max-width:300px) {
+    .about .about-content .personal-info .info-item,
+    .contact .contact-info-item {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .about .about-content .timeline .circle-dot {
+        display: none;
+    }
+    .about .about-content .timeline .timeline-text {
+        margin-bottom: 20px;
+    }
+    .about .about-content .timeline .timeline-item {
+        padding: 0;
+    }
+    .about .about-content .timeline .timeline-item::before{
+        content: none;
+    }
+}
